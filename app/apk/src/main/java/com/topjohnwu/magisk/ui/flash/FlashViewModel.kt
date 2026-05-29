@@ -76,6 +76,9 @@ class FlashViewModel : BaseViewModel() {
                     showReboot = false
                     MagiskInstaller.SecondSlot(outItems, logItems).exec()
                 }
+                Const.Value.FLASH_MAGISK_SYSTEM -> {
+                    MagiskInstaller.Direct_system(outItems, logItems).exec()
+                }
                 Const.Value.PATCH_FILE -> {
                     uri ?: return@launch
                     showReboot = false

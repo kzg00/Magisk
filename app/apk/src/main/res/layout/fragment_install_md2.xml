@@ -213,6 +213,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/install_inactive_slot" />
 
+                        <RadioButton
+                            android:id="@+id/method_direct_system"
+                            style="@style/WidgetFoundation.RadioButton"
+                            gone="@{!viewModel.allowSystemInstall}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/direct_install_system" />
+
                     </RadioGroup>
 
                 </LinearLayout>

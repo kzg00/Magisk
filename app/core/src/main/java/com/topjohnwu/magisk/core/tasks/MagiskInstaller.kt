@@ -537,6 +537,8 @@ abstract class MagiskInstallImpl protected constructor(
 
     protected suspend fun fixEnv() = extractFiles() && "fix_env $installDir".sh().isSuccess
 
+    protected suspend fun direct_system() = extractFiles() && "xdirect_install_system \"$installDir\" \"dummy\" \"$AppApkPath\"".sh().isSuccess
+
     protected fun restore() = findImage() && "restore_imgs $srcBoot".sh().isSuccess
 
     protected fun uninstall() = "run_uninstaller $AppApkPath".sh().isSuccess
@@ -617,6 +619,13 @@ class MagiskInstaller {
         logs: MutableList<String>
     ) : ConsoleInstaller(console, logs) {
         override suspend fun operations() = direct()
+    }
+
+    class Direct_system(
+        console: MutableList<String>,
+        logs: MutableList<String>
+    ) : ConsoleInstaller(console, logs) {
+        override suspend fun operations() = direct_system()
     }
 
     class Emulator(

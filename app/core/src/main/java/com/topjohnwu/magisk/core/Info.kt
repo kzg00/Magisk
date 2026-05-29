@@ -45,6 +45,8 @@ object Info {
         private set
     var isAB = false
         private set
+    var isBootPatched = false
+        private set
     var slot = ""
         private set
     var isVendorBoot = false
@@ -116,6 +118,7 @@ object Info {
         slot = getVar("SLOT")
         legacySAR = getBool("LEGACYSAR")
         isVendorBoot = getBool("VENDORBOOT")
+        isBootPatched = getBool("BOOTIMAGE_PATCHED")
 
         // Default presets
         Config.recovery = getBool("RECOVERYMODE")
