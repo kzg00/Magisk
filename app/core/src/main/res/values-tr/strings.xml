@@ -40,6 +40,7 @@
     <string name="install_start">Hadi Başlayalım</string>
     <string name="manager_download_install">İndirmek ve kurmak için basın</string>
     <string name="direct_install">Doğrudan kurulum (Önerilen)</string>
+    <string name="direct_install_system">Doğrudan Sistem Kurulumu</string>
     <string name="install_inactive_slot">Etkin olmayan slota kur (OTA sonrası)</string>
     <string name="install_inactive_slot_msg">Cihazınız, yeniden başlattıktan sonra mevcut etkin olmayan slota önyükleme yapmaya ZORLANACAKTIR!\nBu seçeneği yalnızca OTA güncellemesi yapıldıktan sonra kullanın.\nDevam edilsin mi?</string>
     <string name="setup_title">Ek Kurulum</string>
