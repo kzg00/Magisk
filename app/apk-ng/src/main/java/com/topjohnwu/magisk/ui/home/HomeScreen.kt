@@ -802,6 +802,16 @@ private fun InstallBottomSheet(
                     },
                     // enabled = installUiState.step >= 1 || installVm.skipOptions
                 )
+                SettingsArrow(
+                    title = stringResource(CoreR.string.direct_install_system),
+                    summary = stringResource(CoreR.string.direct_install_system_summary),
+                    onClick = {
+                        show.value = false
+                        installVm.selectMethod(InstallViewModel.Method.DIRECT_SYSTEM)
+                        installVm.install()
+                    },
+                    // enabled = installUiState.step >= 1 || installVm.skipOptions
+                )
             }
 
             if (!installVm.noSecondSlot) {

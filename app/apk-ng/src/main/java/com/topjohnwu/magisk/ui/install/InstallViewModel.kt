@@ -25,7 +25,7 @@ import com.topjohnwu.magisk.core.R as CoreR
 
 class InstallViewModel(svc: NetworkService) : BaseViewModel() {
 
-    enum class Method { NONE, PATCH, DIRECT, INACTIVE_SLOT }
+    enum class Method { NONE, PATCH, DIRECT, DIRECT_SYSTEM, INACTIVE_SLOT }
 
     data class UiState(
         val step: Int = 0,
@@ -109,6 +109,9 @@ class InstallViewModel(svc: NetworkService) : BaseViewModel() {
             ))
             Method.INACTIVE_SLOT -> navigateTo(Route.Flash(
                 action = Const.Value.FLASH_INACTIVE_SLOT
+            ))
+            Method.DIRECT_SYSTEM -> navigateTo(Route.Flash(
+                action = Const.Value.FLASH_MAGISK_SYSTEM
             ))
             else -> error("Unknown method")
         }
